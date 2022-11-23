@@ -24,7 +24,7 @@ console.log(new_cc);
 
 //Algorithm to compare the user sensitive data to hashed format---used while the same user login or password match
 let pass = 'User123'
-new_pass = bcrypt.hashSync(pass,salt)
+let new_pass = bcrypt.hashSync(pass,salt)
 let flag = bcrypt.compareSync('User123',new_pass)
 console.log(flag);
 

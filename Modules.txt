@@ -1,0 +1,12 @@
+Inbuilt Modules..........................................
+OS (Operating System) -> To fetch OS/Machine Information
+FS (File System) -> To Read,Write or Update file
+Path -> To combine path of file without using '\' or '/'...If we use '\',it won't work on Linux, similarly for '/', this won't work in Windows.
+http -> to create a server
+
+3rd Party Modules.........................................
+Bcrypt -> To convert user's sensitive data to hashed format
+dotenv -> To store and reuse the environment variables
+nodemon -> To restart server even if small changes occur
+Express -> Easiest way to create a server... Concise code for URL Handling, Routing, and developing API
+Morgan -> To get Logger Information
