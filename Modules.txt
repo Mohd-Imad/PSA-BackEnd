@@ -10,3 +10,10 @@ dotenv -> To store and reuse the environment variables
 nodemon -> To restart server even if small changes occur
 Express -> Easiest way to create a server... Concise code for URL Handling, Routing, and developing API
 Morgan -> To get Logger Information
+
+
+
+
+Presetting Environment--------
+required packages/dependencies........................................................................
+npm i express dotenv morgan nodemon chalk @babel/core @babel/preset-env @babel/register @babel-polyfill

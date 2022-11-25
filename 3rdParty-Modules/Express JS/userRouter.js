@@ -3,11 +3,11 @@
 const express = require('express')
 const router = express.Router()
 
-router.get("/",(req,resp)=>{
-    resp.send("User Routing...")
+router.get('/',(req,resp)=>{
+    resp.send("<h1>User Routing...</h1>")
 })
-router.post("/login",(req,resp)=>{
-    resp.send("Login Successful...")
+router.get('/login',(req,resp)=>{
+    resp.send("<h1>Login Successful...</h1>")
 })
 
 module.exports = router

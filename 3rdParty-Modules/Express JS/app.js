@@ -7,7 +7,7 @@ dotenv.config({path:'./config/.env'})
 let port = process.env.PORT 
 
 app.use(morgan('tiny'))
-app.use("/user",require('./userRouter'))
+app.use('/user',require('./userRouter'))
 
 app.listen(port,(err)=>{
     if(err) throw err
