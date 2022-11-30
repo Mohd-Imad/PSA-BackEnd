@@ -1,5 +1,6 @@
 import express from 'express'
-// const express = require('express')
+import chalk from 'chalk'
+
 const app = express()
 
 app.get('/',(req,resp)=>{
@@ -8,6 +9,5 @@ app.get('/',(req,resp)=>{
 
 
 app.listen(8020,()=>{
-    console.log(`Server is running on http://localhost:8020`);
-    
+    console.log(chalk.white(`Server is running on`,chalk.yellow.underline (`http://localhost:8020`)));
 })
