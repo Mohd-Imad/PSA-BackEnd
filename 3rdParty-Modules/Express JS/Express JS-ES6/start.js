@@ -1,4 +1,4 @@
-require('@babel/register')({})
+require('@babel/register')
 const app = require('./app')
 module.exports = app
 
