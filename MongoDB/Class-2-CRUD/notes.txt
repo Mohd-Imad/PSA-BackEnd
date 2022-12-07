@@ -1,0 +1,16 @@
+Installing required packages/dependencies
+
+npm i express dotenv morgan cors chalk mongoose nodemon
+
+
+express - easiest way to create server and routing
+dotenv  - reading configuration file data
+morgan  - http logger
+cors    - cross origin resource sharing - enables application access from client
+chalk   - terminal styling
+nodemon - run application in development mode
+
+
+How to enable ES6?
+1. babel
+2. "type" : "module" -add this property in package.json file

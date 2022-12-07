@@ -14,6 +14,3 @@ Morgan -> To get Logger Information
 
 
 
-Presetting Environment--------
-required packages/dependencies........................................................................
-npm i express dotenv morgan nodemon chalk @babel/core @babel/preset-env @babel/register @babel/polyfill
