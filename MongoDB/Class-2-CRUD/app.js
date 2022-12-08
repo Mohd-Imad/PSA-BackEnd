@@ -24,7 +24,19 @@ app.get('/',(req,resp)=>{
 const port = process.env.PORT 
 const host = process.env.HOST_NAME
 
+//Connecting Mongo DB
+const mongo_url = process.env.MONGO_DB_LOCAL_URL
+mongoose.set('strictQuery', true)    
+mongoose.connect(mongo_url)
+    .then((response)=>{
+    console.log(`Mongo DB Connected Successfully...!`);
+    })
+    .catch((err)=>{
+        console.log(err);
+        process.exit(1)    //to exit from node js
+    })
+
 app.listen(port,host,()=>{
-    console.log(chalk.yellow(`Server is running on http://${host}:${port}`));
-    console.log(chalk.yellow(`Server is running on http://localhost:${port}`));
+    // console.log(`Server is running on http://${host}:${port}`);
+    console.log(chalk.white(`Server is running on`,chalk.yellow.underline (`http://${host}:${port}`)));
 })
