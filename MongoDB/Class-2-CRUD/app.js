@@ -4,6 +4,7 @@ import morgan from 'morgan'
 import cors from 'cors'
 import chalk from 'chalk'
 import mongoose from 'mongoose'
+import productRouter from './router/productRouter.js'
 
 const app = express()
 
@@ -20,6 +21,9 @@ app.use(express.urlencoded({extended:false}))
 app.get('/',(req,resp)=>{
     resp.send("<h1>Learning CRUD operations using Node JS and Mongo DB</h1>")
 })
+
+//configure product/user routes
+app.use('/product',productRouter)
 
 const port = process.env.PORT 
 const host = process.env.HOST_NAME
