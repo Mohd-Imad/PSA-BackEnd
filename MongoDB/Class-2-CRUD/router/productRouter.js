@@ -1,4 +1,4 @@
-import express, { response } from 'express'
+import express from 'express'
 import Product from '../model/Products.js'
 
 const router = express.Router()
@@ -11,29 +11,30 @@ const router = express.Router()
 */
 router.post('/create', async (req, resp) => {
     try {
-        //reading data from form{
+        //reading data from form
         let new_product = {
             name: req.body.name,
             price: req.body.price,
             qty: req.body.qty,
         }
-
-        let product = Product(new_product)
-        console.log(product);
-
-       let  prod = await resp.findOne({name : new_product.name})
-        if(prod){
-            return resp.status(401).json({msg : "Product already exists...!"})
+    
+        //for avoiding existing product creation
+        let product = await Product.findOne({ name: new_product.name })
+        if (product) {
+            return resp.status(401).json({ msg: "Product already exists...!" })
         }
+
+          product = Product(new_product)
+        console.log(product);
 
         product = await product.save()    //save to DB
         resp.status(200).json({
-            restult: "Product Created Successfully...!",
+            result: "Product Created Successfully...!",
             product: product
         })
     }
     catch (err) {
-
+        if(err) throw err
     }
 })
 // router.put('/',(req,resp)=>{})
