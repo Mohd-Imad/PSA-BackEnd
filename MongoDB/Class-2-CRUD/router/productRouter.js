@@ -97,9 +97,7 @@ router.delete('/delete/:id', async (req,resp)=>{
             result : "Product Deleted"
         })
     }
-    catch(err){
-
-    }
+    catch(err){}
 })
 
 export default router
