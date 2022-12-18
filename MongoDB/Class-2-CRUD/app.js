@@ -23,7 +23,7 @@ app.get('/',(req,resp)=>{
 })
 
 //configure product/user routes
-app.use('/product',productRouter)
+app.use('/products',productRouter)
 
 const port = process.env.PORT 
 const host = process.env.HOST_NAME
@@ -41,6 +41,6 @@ mongoose.connect(mongo_url)
     })
 
 app.listen(port,host,()=>{
-    // console.log(`Server is running on http://${host}:${port}`);
-    console.log(chalk.white(`Server is running on`,chalk.yellow.underline (`http://${host}:${port}`)));
+    console.log(`Server is running on http://${host}:${port}`);
+    // console.log(chalk.white(`Server is running on`,chalk.yellow.underline (`http://${host}:${port}`)));
 })
