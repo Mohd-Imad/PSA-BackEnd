@@ -41,6 +41,6 @@ mongoose.connect(mongo_url)
     })
 
 app.listen(port,host,()=>{
-    console.log(`Server is running on http://${host}:${port}`);
-    // console.log(chalk.white(`Server is running on`,chalk.yellow.underline (`http://${host}:${port}`)));
+    // console.log(`Server is running on http://${host}:${port}`);
+    console.log(chalk.white(`Server is running on`,chalk.yellow.underline (`http://${host}:${port}`)));
 })

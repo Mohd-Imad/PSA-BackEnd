@@ -38,33 +38,27 @@ router.post('/create', async (req, resp) => {
 })
 
 /*
-    URL:localhost:8030/products/product/:id
+    URL:localhost:8030/products/:id
     Method: GET
     Fields:name, price, qty
 */
-router.get('/product/:id', async (req, resp) => {
+router.get('/:id', async (req, resp) => {
     try {
         let product_Id = req.params.id
-        let product = Product.findById(product_Id)
-        if (!product) {
-            return resp.status(401).json({
-                result: "No Product...!"
-            })
-        }
-        product = await Product.findByIdAndDelete((product_Id))
+        let product = await Product.findById(product_Id)
         resp.status(200).json(product)
     }
     catch (err) {
-        resp.status(500).json({ msg: err.message })
+        resp.status(500).json({ msg: "No Product found...!" })
     }
 })
 
 /*
-    URL:localhost:8030/products/all
+    URL:localhost:8030/products
     Method: GET
     Fields:name, price, qty
 */
-router.get('/all', async (req, resp) => {
+router.get('/', async (req, resp) => {
     try {
         let products = await Product.find()
         resp.status(200).json(products)
