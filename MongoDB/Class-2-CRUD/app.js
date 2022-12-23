@@ -15,7 +15,7 @@ app.use(morgan('short')) //http logger
 
 //to read form data
 app.use(express.json())
-app.use(express.urlencoded({extended:false}))
+// app.use(express.urlencoded({extended:false}))
 
 //route request
 app.get('/',(req,resp)=>{
@@ -42,5 +42,6 @@ mongoose.connect(mongo_url)
 
 app.listen(port,host,()=>{
     // console.log(`Server is running on http://${host}:${port}`);
-    console.log(chalk.white(`Server is running on`,chalk.yellow.underline (`http://${host}:${port}`)));
+    console.log(chalk.white(chalk.white.bold(`Local :`),`Server is running on`,chalk.yellow.underline (`http://localhost:${port}`)));
+    console.log(chalk.white(chalk.white.bold(`Network :`),`Server is running on`,chalk.yellow.underline (`http://${host}:${port}`)));
 })
