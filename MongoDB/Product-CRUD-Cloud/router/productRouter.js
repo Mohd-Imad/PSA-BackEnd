@@ -24,7 +24,7 @@ router.post('/create', async (req, resp) => {
         if (err) throw err
     }
 
-    router.get('/get', async (req, resp) => {
+    router.get('/all', async (req, resp) => {
         try {
             let products = await Product.find()
             resp.status(200).json(products)
