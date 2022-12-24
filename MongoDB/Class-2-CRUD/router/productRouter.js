@@ -43,8 +43,8 @@ router.post('/create', async (req, resp) => {
     Fields:name, price, qty
 */
 router.get('/:id', async (req, resp) => {
+    let product_Id = req.params.id
     try {
-        let product_Id = req.params.id
         let product = await Product.findById(product_Id)
         resp.status(200).json(product)
     }
