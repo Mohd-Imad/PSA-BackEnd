@@ -21,13 +21,13 @@ app.get('/',(req,resp)=>{
     resp.send("<h1>Express Product CRUD</h1>")
 })
 
-let mongo_url = process.env.MONGO_DB_URL
+let mongo_url = process.env.MONGO_URL
 mongoose.set('strictQuery', true)    
 mongoose.connect(mongo_url,{
     useNewUrlParser : false,
     useUnifiedTopology : false,
 }).then((resp)=>{
-    console.log("Mongo DB connected Successfully....!");
+    console.log("Mongo Cloud connected Successfully....!");
 })
 .catch((err)=>{
     console.log(err);
