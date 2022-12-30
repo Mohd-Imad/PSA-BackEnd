@@ -25,7 +25,6 @@ const RegForm = () => {
         let mobile = values.mobile
         let password = values.password
         let re_password = values.re_password
-
     }
 
     return (
